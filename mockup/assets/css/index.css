@@ -1,0 +1,267 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	min-height: 100%;
+}
+
+body {
+	background: url('../images/bkg.jpg') center;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: default;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.6rem;
+	height: 100%;
+	position: relative;
+}
+
+.page-header {
+	background: rgba(255, 255, 255, 0.95);
+	height: 5rem;
+	text-align: center;
+	width: 100%;
+}
+
+.page-header--logo {
+	color: #9f9fa8;
+	padding-top: 1.2rem;
+	width: 10.6rem;
+}
+
+.main {
+	margin-top: 3rem;
+}
+
+.main-title {
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 6rem;
+}
+
+.main-description {
+	background: rgba(255, 255, 255, 0.7);
+	border: 5px solid white;
+	border-radius: 1.6rem;
+	color: #252221;
+	height: 16rem;
+	line-height: 2.4rem;
+	margin: 0 auto 6rem auto;
+	padding: 1.6rem;
+	position: relative;
+	text-align: justify;
+	width: 46.2rem;
+}
+
+.main-description__button {
+	background: 
+	  linear-gradient(#8abf77, rgba(138, 191, 119, 0) 70.71%),
+    linear-gradient(75deg, rgba(222, 226, 117, 0.5) 50%, rgba(222, 226, 117, 0) 70.71%),
+    linear-gradient(90deg, #8abf77 50%, rgba(138, 191, 119, 0.75) 100%),
+    linear-gradient(150deg, rgba(222, 226, 117, 0.75) 80%, rgba(222, 226, 117, 1) 115%);
+	border-radius: 2rem;
+	border: 3px solid rgba(173, 216, 230, 0.5);
+	color: white;
+	cursor: pointer;
+	left: 10%;
+	letter-spacing: 2px;
+	bottom: -2.8rem;
+	font-weight: 300;
+	height: 5.6rem;
+	padding: 1.6rem;
+	position: absolute;
+	text-align: center;
+	text-shadow: 0 0 5px #252221;
+	width: 80%;
+}
+
+.view-tributes {
+	color: #8abf77;
+	cursor: pointer;
+	font-weight: 700;
+	margin: 0 auto 6rem auto;
+	text-align: center;
+	text-shadow: 1px 1px 5px #252221;
+}
+
+.tribute-form {
+	background: white;
+	border-radius: 5px;
+	margin: 0 auto 3rem auto;
+	width: 794px;
+}
+
+.tribute-form__title {
+	font-size: 3rem;
+	padding: 3rem 6rem;
+	text-align: center;
+}
+
+.tribute-form__form--label {
+	display: block;
+	width: 35rem;
+	margin: 0 auto 3rem auto;
+}
+
+.tribute-form__form--input {
+	background: rgba(189, 177, 178, 0.25);
+	border: none;
+	border-radius: 5px;
+	height: 3.6rem;
+	padding: 1rem;
+	width: 29.6rem;
+}
+
+.tribute-form__form--input::placeholder,
+.tribute-form__form--textarea::placeholder {
+	font-size: 1.6rem;
+	font-weight: 700;
+}
+
+.tribute-form__form--input:focus,
+.tribute-form__form--textarea:focus {
+	border: 1px solid #8abf77;
+	outline: none;
+}
+
+.tribute-form__form--input:focus::placeholder,
+.tribute-form__form--textarea:focus::placeholder {
+	color: #8abf77;
+	font-weight: 700;
+	padding-top: 0;
+	vertical-align: super;
+	text-align: right;
+}
+
+.tribute-form__form--label-text {
+	color: #ab8364;
+	padding: 5px;
+	position: relative;
+	top: 5px;
+}
+
+.tribute-form__form--textarea {
+	background: rgba(189, 177, 178, 0.25);
+	border: none;
+	border-radius: 5px;
+	display: block;
+	height: 10.8rem;
+	margin: 0 auto 3rem auto;
+	padding: 1rem;
+	width: 34.2rem;
+}
+
+.tribute-form__form--button {
+	background: #8abf77;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	display: block;
+	font-size: 1.6rem;
+	padding: 1rem 2rem;
+	margin: 0 auto 3rem auto;
+}
+
+.tribute-form__submit-message {
+	padding-bottom: 3rem;
+}
+
+.tribute-form__submit-message--title {
+	color: #8abf77;
+	font-size: 3rem;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.tribute-form__submit-message--image {
+	display: block;
+	margin: 0 auto 3rem auto;
+	width: 29.6rem;
+}
+
+.form-hide {
+	margin: 0 auto 3rem auto;
+	text-align: center;
+}
+
+.form-hide__button {
+	margin-bottom: 0;
+}
+
+.form-hide__text {
+	padding: 0;
+	color: white;
+}
+
+.tribute-occasions {
+	margin: 0 auto;
+	width: 794px;
+}
+
+/*.tribute-occasions:after {
+	clear: both;
+	content: ' ';
+	display: table;
+}*/
+
+.tribute-occasions__panel {
+	width: 33.3%;
+	float: right;
+	height: 750px;
+}
+
+.tribute-occasions__title {
+	padding-top: 6rem;
+	padding-bottom: 3.6rem;
+	text-align: center;
+}
+
+.tribute-occasions__text {
+	color: white;
+	padding-bottom: 3.2rem;
+	text-align: center;
+	text-shadow: 1px 1px 5px #252221;
+}
+
+.tribute-occasions__text:hover {
+	color: #8abf77;
+	
+}
+
+.tribute-occasions__image {
+	border: 2px solid white;
+	border-radius: 50%;
+	box-shadow: 1px 1px 5px #252221;
+	margin-bottom: 4rem;
+	width: 22.8rem;
+}
+
+/*clearfix*/
+.tribute-occasions:after {
+	clear:both;
+	content: ' ';
+	display: table;
+}
+
+.footer {
+	bottom: 0;
+	color: #897975;
+	font-size: 1rem;
+	height: 5rem;
+	padding: 1.5rem;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.footer a:link, .footer a:visited {
+	color: #897975;
+	text-decoration: none;
+}
+
+/*#e2d1aa*/
+/*a69c5c*/
+/*#dee275*/
