@@ -1,6 +1,6 @@
 window.onload = function() {
 
-	scrollTop(window.scrollY);
+	scrollTop(window.scrollY, 6);
 
 	//I could be using jQuery, but I'm just having fun here with vanilla javascript.
 	//To use jQuery instead, add jQuery script to html file, then...
@@ -29,55 +29,59 @@ window.onload = function() {
 
 	let validInput = false; //initialize assuming empty 
 
+	//function called by click on add tribute button
 	function openForm() {
 		tributeFormPanel.classList.remove('hidden');
+		tributeFormPanel.classList.remove('closed');
 		formCloseCtrl.classList.remove('hidden');
-		scrollToForm(1);
+		scrollToForm(1, 6);
 	}
 
-	function scrollToForm(x) {
+	//animation to scroll from top of page to top of form
+	//recursive function, the higher the number of speed the faster the scroll 
+	function scrollToForm(x, speed) {
 		if( x >= 512) {
 			return;
 		}
 		window.scroll(0, x);
-		x+=6;
-		setTimeout(function(){scrollToForm(x)}, 1);
+		x+=speed;
+		setTimeout(function(){scrollToForm(x, speed)}, 1);
 	}
 
-	function scrollTop(x) {
+	//animation to scroll back to top of page after user clicks on close button
+	function scrollTop(x, speed) {
 		if( x <= 0) {
 			return window.scroll(0, 0);
 		}
 		window.scroll(0, x);
-		x-=6;
-		setTimeout(function(){scrollTop(x)}, 1);
+		x-=speed;
+		setTimeout(function(){scrollTop(x, speed)}, 1);
 	}
 
+	//hides form after submitted entries validated
 	function hideForm() {
 		tributeForm.classList.add('hidden');
 		tributeFormTitle.classList.add('hidden');
 	}
 
+	//hides form and shows thankyou message
 	function showThanks() {
 		hideForm();
-		thankYou.style.display = 'inherit';
+		thankYou.classList.remove('hidden');
 	}
 
-	function reset() {
+	//resets form and DOM after user clicks on close button
+	function domReset() {
 		formCloseCtrl.classList.add('hidden');
 		tributeFormPanel.classList.add('hidden');
 		thankYou.classList.add('hidden');
 		tributeForm.classList.remove('hidden');
 		tributeFormTitle.classList.remove('hidden');
-		tributeFormPanel.classList.add('hidden');
-		scrollTop(window.scrollY);
+		tributeFormPanel.classList.add('closed');
+		setTimeout(function(){scrollTop(window.scrollY, 6)}, 50);
 	}
 
-	function closeForm() {
-		tributeFormPanel.style.display = 'none';
-		formCloseCtrl.style.display = 'none';
-	}
-
+	//validates and submits form information
 	function handleSubmit(e) {
 		e.preventDefault(); //prevent page reload
 		let name = e.target.name.value.trim();
@@ -88,9 +92,6 @@ window.onload = function() {
 
 		if (validEmail && validName) {
 
-			nameInput.classList.remove('invalid');
-			nameValidation.classList.add('hidden');
-
 			showThanks();
 			tributeForm.reset();
 			//send FORM DATA via AJAX here !!!!! or perhaps through node/express server???
@@ -98,47 +99,58 @@ window.onload = function() {
 	}
 
 	function validateInput(e) {
+		//if the target input is validated, show validated class, else remove validation
 		if(validate(e.target.name, e.target.value)) {
 			e.target.classList.remove('invalid');
+			e.target.classList.add('valid');
+
 			e.target.name === 'email' ? 
 				emailValidation.classList.add('hidden') 
 				: nameValidation.classList.add('hidden');
+
 		} else {
 			e.target.classList.add('invalid');
+			e.target.classList.remove('valid');
+
 			e.target.name === 'email' ? 
 				emailValidation.classList.remove('hidden') 
 				: nameValidation.classList.remove('hidden');
 		}
-		//since this is called on a blur event, will hide placeholder text
-		e.target.name === 'email' ? 
-			emailPlaceholder.classList.add('hidden') 
-			: namePlaceholder.classList.add('hidden');
 	}
 
 	function validate(element, value) {
+		//check for value entered into name field and check email against regex for email
 		if(element === 'name') {
-			return !value ? false : true;
+			return !value.trim() ? false : true;
 		} else {
 			let regex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i;
 			return value.match(regex);
 		}
 	}
 
-	function updatePlaceholder(e) {
+	function showPlaceholder(e) {
 		e.target.name === 'email' ? 
 			emailPlaceholder.classList.remove('hidden') 
 			: namePlaceholder.classList.remove('hidden');
 	}
 
+	function hidePlaceholder(e) {
+		e.target.name === 'email' ? 
+			emailPlaceholder.classList.add('hidden') 
+			: namePlaceholder.classList.add('hidden');
+	}
+
 	formOpenBtn.addEventListener('click', openForm);
-	// formSubmitBtn.addEventListener('click', showThanks);
-	formCloseBtn.forEach(button=>button.addEventListener('click', reset));
+	formCloseBtn.forEach(button=>button.addEventListener('click', domReset));
 
 	tributeForm.addEventListener('submit', handleSubmit);
 
-	nameInput.addEventListener('blur', validateInput);
-	nameInput.addEventListener('focus', updatePlaceholder);
-	emailInput.addEventListener('focus', updatePlaceholder);
-	emailInput.addEventListener('blur', validateInput);
+	nameInput.addEventListener('input', validateInput);
+	nameInput.addEventListener('focus', showPlaceholder);
+	nameInput.addEventListener('blur', hidePlaceholder);
 
+	emailInput.addEventListener('input', validateInput);
+	emailInput.addEventListener('focus', showPlaceholder);
+	emailInput.addEventListener('blur', hidePlaceholder);
+	
 }
