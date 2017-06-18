@@ -96,7 +96,12 @@ window.onload = function() {
 		if (validEmail && validName) {
 
 			showThanks();
+
+			//reset form data and validation state
 			tributeForm.reset();
+			nameValidation.classList.remove('valid');
+			emailValidation.classList.remove('valid');
+			
 			//send FORM DATA via AJAX here !!!!! or perhaps through node/express server???
 		}
 	}
