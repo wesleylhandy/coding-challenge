@@ -27,8 +27,6 @@ window.onload = function() {
 	const emailValidation = document.querySelector('.validation--email');
 	const emailInput = document.querySelector('input[name="email"]');
 
-	let validInput = false; //initialize assuming empty 
-
 	//function called by click on add tribute button
 	function openForm() {
 		tributeFormPanel.classList.remove('hidden');
@@ -87,8 +85,13 @@ window.onload = function() {
 		let name = e.target.name.value.trim();
 		let email = e.target.email.value.trim();
 
+		//returns true or false if valid
 		let validName = validate("name", name);
 		let validEmail = validate("email", email);
+
+		//update DOM for validation if absent
+		updateValidation('name', validName);
+		updateValidation('email', validEmail);
 
 		if (validEmail && validName) {
 
@@ -98,25 +101,24 @@ window.onload = function() {
 		}
 	}
 
-	function validateInput(e) {
-		//if the target input is validated, show validated class, else remove validation
-		if(validate(e.target.name, e.target.value)) {
-			e.target.classList.remove('invalid');
-			e.target.classList.add('valid');
-
-			e.target.name === 'email' ? 
-				emailValidation.classList.add('hidden') 
-				: nameValidation.classList.add('hidden');
-
+	function updateValidation(element, validation) {
+		const input = element === 'email' ? emailInput : nameInput;
+		const inputValidation = element === 'email' ? emailValidation : nameValidation;
+		if (validation) {
+			input.classList.remove('invalid');
+			input.classList.add('valid');
+			inputValidation.classList.add('hidden');
 		} else {
-			e.target.classList.add('invalid');
-			e.target.classList.remove('valid');
-
-			e.target.name === 'email' ? 
-				emailValidation.classList.remove('hidden') 
-				: nameValidation.classList.remove('hidden');
+			input.classList.add('invalid');
+			input.classList.remove('valid');
+			inputValidation.classList.remove('hidden');
 		}
 	}
+
+	function validateInput(e) {
+		updateValidation(e.target.name, validate(e.target.name, e.target.value))
+	}
+
 
 	function validate(element, value) {
 		//check for value entered into name field and check email against regex for email
