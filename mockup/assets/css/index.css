@@ -91,6 +91,7 @@ body {
 	background: white;
 	border-radius: 5px;
 	margin: 0 auto 3rem auto;
+	padding-bottom: 3rem;
 	width: 794px;
 }
 
@@ -104,6 +105,7 @@ body {
 	display: block;
 	width: 35rem;
 	margin: 0 auto 3rem auto;
+	position: relative;
 }
 
 .tribute-form__form--input {
@@ -121,20 +123,39 @@ body {
 	font-weight: 700;
 }
 
+.tribute-form__form--input:focus::placeholder {
+	color: transparent;
+}
+
 .tribute-form__form--input:focus,
 .tribute-form__form--textarea:focus {
 	border: 1px solid #8abf77;
 	outline: none;
 }
 
-.tribute-form__form--input:focus::placeholder,
-.tribute-form__form--textarea:focus::placeholder {
+.placeholder-text {
 	color: #8abf77;
 	font-weight: 700;
-	padding-top: 0;
-	vertical-align: super;
+	position: absolute;
+	right: 3.75rem;
 	text-align: right;
+	top: 3px;
 }
+
+.validation {
+	color: #ab8364;
+	font-weight: 700;
+	left: 25%;
+	position: absolute;
+	text-align: center;
+	top: -1.7rem;
+	width: 50%;
+}
+
+.invalid {
+	border: 1px solid #ab8364;
+}
+
 
 .tribute-form__form--label-text {
 	color: #ab8364;
@@ -165,18 +186,18 @@ body {
 	margin: 0 auto 3rem auto;
 }
 
-.tribute-form__submit-message {
+.tribute-form__thanks {
 	padding-bottom: 3rem;
 }
 
-.tribute-form__submit-message--title {
+.tribute-form__thanks--title {
 	color: #8abf77;
 	font-size: 3rem;
 	margin-bottom: 3rem;
 	text-align: center;
 }
 
-.tribute-form__submit-message--image {
+.tribute-form__thanks--image {
 	display: block;
 	margin: 0 auto 3rem auto;
 	width: 29.6rem;
@@ -188,24 +209,14 @@ body {
 }
 
 .form-hide__button {
-	margin-bottom: 0;
-}
-
-.form-hide__text {
-	padding: 0;
 	color: white;
+	cursor: pointer;
 }
 
 .tribute-occasions {
 	margin: 0 auto;
 	width: 794px;
 }
-
-/*.tribute-occasions:after {
-	clear: both;
-	content: ' ';
-	display: table;
-}*/
 
 .tribute-occasions__panel {
 	width: 33.3%;
@@ -260,6 +271,10 @@ body {
 .footer a:link, .footer a:visited {
 	color: #897975;
 	text-decoration: none;
+}
+
+.hidden {
+	display: none;
 }
 
 /*#e2d1aa*/

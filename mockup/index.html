@@ -29,29 +29,34 @@
 			<p>VIEW CURRENT TRIBUTES</p>
 		</div>
 
-		<div class='tribute-form'>
+		<div class='tribute-form hidden'>
 			<h1 class='tribute-form__title'>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.</h1>
-			<form action='mailto:' class='tribute-form__form'>
+			<form class='tribute-form__form'>
+				
 				<label for='name' class='tribute-form__form--label'>
+					<div class='validation validation--name hidden'>FIELD REQUIRED</div>
+					<div class='placeholder-text placeholder-text--name hidden'>NAME</div>
 					<span class='tribute-form__form--label-text'>*</span>
-					<input type="text" name='name' placeholder="NAME" class='tribute-form__form--input'>
+					<input type="text" name='name' placeholder="NAME" class='tribute-form__form--input' value=''>
 				</label>
-
+				
 				<label for='email' class='tribute-form__form--label'>
+					<div class='validation validation--email hidden'>FIELD REQUIRED</div>
+					<div class='placeholder-text placeholder-text--email hidden'>EMAIL</div>
 					<span class='tribute-form__form--label-text'>*</span>
-					<input type='email' name='email' placeholder="EMAIL" class='tribute-form__form--input'>
+					<input type='text' name='email' placeholder="EMAIL" class='tribute-form__form--input' value=''>
 				</label>
-				<textarea name='message' placeholder="NAME" class='tribute-form__form--textarea'></textarea>
+				<textarea name='message' placeholder="NAME" class='tribute-form__form--textarea' value=''></textarea>
 				<button type='submit' class='tribute-form__form--button'>SEND COMMENTS</button>
 			</form>
-			<div class='tribute-form__submit-message'>
-				<h1 class='tribute-form__submit-message--title'>THANK YOU!</h1>
-				<img src='assets/images/aaron-burden-211846.jpg' class='tribute-form__submit-message--image'/>
+			<div class='tribute-form__thanks hidden'>
+				<h1 class='tribute-form__thanks--title'>THANK YOU!</h1>
+				<img src='assets/images/aaron-burden-211846.jpg' class='tribute-form__thanks--image'/>
 			</div>
 		</div>
-		<div class='form-hide'>
+		<div class='form-hide hidden'>
 			<img src='assets/images/ic_keyboard_arrow_up_white_24px.svg' class='form-hide__button'>
-			<p class='form-hide__text'>HIDE FORM</p>
+			<p class='form-hide__button'>HIDE FORM</p>
 		</div>
 
 		<div class='tribute-occasions'>
