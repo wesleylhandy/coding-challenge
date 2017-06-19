@@ -16,6 +16,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
+	font-weight: 700;
 	height: 100%;
 	position: relative;
 }
@@ -49,11 +50,10 @@ body {
 }
 
 .main-description {
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0.75);
 	border: 5px solid white;
 	border-radius: 1.6rem;
 	color: #252221;
-	font-weight: 700;
 	height: 160px;
 	height: 16rem;
 	line-height: 24px;
@@ -69,23 +69,17 @@ body {
 }
 
 .main-description__button {
-	background: 
-	  -webkit-linear-gradient(#8abf77, rgba(138, 191, 119, 0) 70.71%),
-    -webkit-linear-gradient(15deg, rgba(222, 226, 117, 0.5) 50%, rgba(222, 226, 117, 0) 70.71%),
-    -webkit-linear-gradient(left, #8abf77 50%, rgba(138, 191, 119, 0.75) 100%),
-    -webkit-linear-gradient(300deg, rgba(222, 226, 117, 0.75) 80%, rgba(222, 226, 117, 1) 115%);
-	background: 
-	  linear-gradient(#8abf77, rgba(138, 191, 119, 0) 70.71%),
-    linear-gradient(75deg, rgba(222, 226, 117, 0.5) 50%, rgba(222, 226, 117, 0) 70.71%),
-    linear-gradient(90deg, #8abf77 50%, rgba(138, 191, 119, 0.75) 100%),
-    linear-gradient(150deg, rgba(222, 226, 117, 0.75) 80%, rgba(222, 226, 117, 1) 115%);
+	background: -webkit-linear-gradient( right, rgb(117,194,55) 0%, rgb(66,194,56) 21%, rgb(143,191,60) 60%, rgb(94,194,55) 100%);
+	background: linear-gradient(270deg, rgb(117,194,55) 0%, rgb(66,194,56) 21%, rgb(143,191,60) 60%, rgb(94,194,55) 100%);
 	border-radius: 2rem;
-	border: 3px solid rgba(173, 216, 230, 0.5);
+	border: 3px solid rgba(201, 235, 242, 0.7);
 	color: white;
 	cursor: pointer;
-	font-weight: 700;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 800;
 	left: 10%;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	bottom: -28px;
 	bottom: -2.8rem;
 	font-weight: 300;
@@ -100,7 +94,7 @@ body {
 }
 
 .view-tributes {
-	color: #8abf77;
+	color: rgb(170, 242, 148);
 	cursor: pointer;
 	font-weight: 700;
 	margin: 0 auto 60px auto;
@@ -255,7 +249,7 @@ body {
 }
 
 .tribute-form__form--button {
-	background: #8abf77;
+	background: rgb(126, 194, 49);
 	border: none;
 	border-radius: 5px;
 	color: white;
@@ -395,6 +389,11 @@ body {
 		max-width: 35.2rem;
 	}
 
+	.main-description__button {
+		left: 12.5%;
+		width: 75%;
+	}
+
 	.view-tributes {
 		margin-bottom: 3rem;
 	}
@@ -404,7 +403,7 @@ body {
 	}
 
 	.tribute-occasions {
-		height: 77.6rem;
+		height: 87.6rem;
 		padding-bottom: 3rem;
 		position: relative;
 		width: 100%;
@@ -439,7 +438,7 @@ body {
   }
 
   .left {
-  	bottom: 0;
+  	bottom: 10rem;
   	height: 39.8rem;
   	left: 0;
   	position: absolute;
@@ -447,7 +446,7 @@ body {
   }
 
   .right {
-  	bottom: 0;
+  	bottom: 10rem;
   	height: 39.8rem;
   	position: absolute;
   	right: 0;
