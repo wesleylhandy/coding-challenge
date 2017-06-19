@@ -87,7 +87,6 @@ body {
 	font-weight: 300;
 	height: 56px;
 	height: 5.6rem;
-	outline: 0;
 	padding: 16px;
 	padding: 1.6rem;
 	position: absolute;
@@ -96,7 +95,11 @@ body {
 	width: 80%;
 }
 
-.main-description__button::-moz-focus-inner {
+button {
+	outline: 0;
+}
+
+button::-moz-focus-inner {
 	border:0;
 }
 
