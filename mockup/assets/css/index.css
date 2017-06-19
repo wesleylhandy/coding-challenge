@@ -13,7 +13,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor: default;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 700;
@@ -116,8 +116,8 @@ body {
 .tribute-form__title {
 	font-size: 30px;
 	font-size: 3rem;
-	padding: 30px 60px;
-	padding: 3rem 6rem;
+	padding: 30px 65px;
+	padding: 3rem 6.5rem;
 	text-align: center;
 }
 
