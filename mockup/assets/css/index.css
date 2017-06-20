@@ -56,8 +56,6 @@ body {
 	border: 5px solid white;
 	border-radius: 1.6rem;
 	color: #252221;
-	min-height: 160px;
-	min-height: 16rem;
 	line-height: 24px;
 	line-height: 2.4rem;
 	margin: 0 auto 60px auto;
@@ -394,7 +392,6 @@ button::-moz-focus-inner {
 	}
 
 	.main-description {
-		height: 21.6rem;
 		max-width: 35.2rem;
 	}
 
@@ -477,12 +474,16 @@ button::-moz-focus-inner {
 		width: calc(422.282px * .95);
 	}
 
-	.tribute-form__form--textarea, .tribute-form__form--label {
+	.tribute-form__form--textarea {
+		width: 92.5%;
+	}
+
+	.tribute-form__form--label {
 		width: 95%;
 	}
 
 	.tribute-form__form--input {
-		width: 92.5%;
+		width: 90%;
 	}
 
 	.placeholder-text {
@@ -525,10 +526,6 @@ button::-moz-focus-inner {
 
 @media screen and (max-width: 361px) {
 
-	.main-description {
-		height: 24.6rem;
-	}
-
 	.main-title__image {
 		width: calc(422.282px * .75);
 
@@ -544,10 +541,6 @@ button::-moz-focus-inner {
 }
 
 @media screen and (max-width: 312px) {
-
-	.main-description {
-		height: 27.6rem;
-	}
 
 	.main-title__image {
 		width: calc(422.282px * .65);
